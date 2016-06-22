@@ -1,0 +1,13 @@
+<div class="portlet-mailplus"
+    i18n:domain="plone">
+
+    <div class="portletHeader">
+        <span tal:content="view/getTitle">Title of the portlet</span>
+    </div>
+
+    <tal:block>
+        <div class="portletItem odd" tal:content="structure view/render_mailplus">
+            here comes the subscriber-form
+        </div>
+    </tal:block>
+</div>

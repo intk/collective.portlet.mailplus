@@ -50,7 +50,7 @@ else:
 class IMailplusPortlet(IPortletDataProvider):
     """A portlet that renders Mailplus integration HTML.
     """
-    header = = schema.TextLine(
+    header = schema.TextLine(
         title=_(u"Title", default=u"Title"),
         description=_(u"portlet_title", default=u"Title of the portlet."),
         required=False)

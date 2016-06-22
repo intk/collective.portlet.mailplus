@@ -1,4 +1,4 @@
-<div class="portlet-mailplus"
+<div class="portlet portlet-mailplus"
     i18n:domain="plone">
 
     <div class="portletHeader">

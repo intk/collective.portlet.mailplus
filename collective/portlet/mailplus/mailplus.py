@@ -50,6 +50,11 @@ else:
 class IMailplusPortlet(IPortletDataProvider):
     """A portlet that renders Mailplus integration HTML.
     """
+    header = = schema.TextLine(
+        title=_(u"Title", default=u"Title"),
+        description=_(u"portlet_title", default=u"Title of the portlet."),
+        required=False
+
     mailplus_html = schema.Text(
         title=_(u"mailplus_html", default=u"Mailplus HTML"),
         description=_(u"mailplus_html_description", default=u"Paste here the integration HTML provided by Mailplus"),
@@ -121,20 +126,9 @@ class Renderer(base.Renderer):
             logger.warn("Static portlet at %s has stored non-unicode text. "
                 "Assuming utf-8 encoding." % context.absolute_url())
 
-        # Portal transforms needs encoded strings
         orig = orig.encode('utf-8')
-
-        transformer = getToolByName(context, 'portal_transforms')
-        transformer_context = context
-        if hasattr(self, '__portlet_metadata__'):
-            if ('category' in self.__portlet_metadata__ and
-                    self.__portlet_metadata__['category'] == 'context'):
-                assignment_context_path = self.__portlet_metadata__['key']
-                assignment_context = context.unrestrictedTraverse(assignment_context_path)
-                transformer_context = assignment_context
-        data = transformer.convertTo(mt, orig,
-                                     context=transformer_context, mimetype='text/html')
-        result = data.getData()
+        result = orig
+        
         if result:
             if isinstance(result, str):
                 return unicode(result, 'utf-8')

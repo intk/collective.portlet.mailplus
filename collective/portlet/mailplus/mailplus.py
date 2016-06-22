@@ -61,7 +61,7 @@ class Assignment(base.Assignment):
     This is what is actually managed through the portlets UI and associated
     with columns.
     """
-    implements(IMailplus)
+    implements(IMailplusPortlet)
     
     header = u''
     mailplus_html = u'' 

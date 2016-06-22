@@ -16,7 +16,7 @@ class IMailplus(Interface):
     This interface defines the mailplus html record on the registry
     """
     
-    mailplus_html = Text(
+    mailplus_html = schema.Text(
         title=_(u"mailplus_html", default=u"Mailplus HTML"),
         description=_(u"mailplus_html_description", default=u"Paste here the integration HTML provided by Mailplus"),
         required=True)

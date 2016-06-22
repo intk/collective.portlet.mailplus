@@ -50,7 +50,7 @@ else:
 class IMailplusPortlet(IPortletDataProvider):
     """A portlet that renders Mailplus integration HTML.
     """
-    mailplus_html = Text(
+    mailplus_html = schema.Text(
         title=_(u"mailplus_html", default=u"Mailplus HTML"),
         description=_(u"mailplus_html_description", default=u"Paste here the integration HTML provided by Mailplus"),
         required=True)

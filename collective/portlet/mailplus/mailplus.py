@@ -53,7 +53,7 @@ class IMailplusPortlet(IPortletDataProvider):
     header = = schema.TextLine(
         title=_(u"Title", default=u"Title"),
         description=_(u"portlet_title", default=u"Title of the portlet."),
-        required=False
+        required=False)
 
     mailplus_html = schema.Text(
         title=_(u"mailplus_html", default=u"Mailplus HTML"),
@@ -128,7 +128,7 @@ class Renderer(base.Renderer):
 
         orig = orig.encode('utf-8')
         result = orig
-        
+
         if result:
             if isinstance(result, str):
                 return unicode(result, 'utf-8')

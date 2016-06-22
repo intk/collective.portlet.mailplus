@@ -15,6 +15,11 @@ class IMailplus(Interface):
     """
     This interface defines the mailplus html record on the registry
     """
+
+    header = = schema.TextLine(
+        title=_(u"Title", default=u"Title"),
+        description=_(u"portlet_title", default=u"Title of the portlet."),
+        required=False)
     
     mailplus_html = schema.Text(
         title=_(u"mailplus_html", default=u"Mailplus HTML"),
